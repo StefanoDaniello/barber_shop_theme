@@ -7,38 +7,18 @@
       "palette": [
         {
           "slug": "base",
-          "color": "#1e1e1e",
-          "name": "Base"
+          "color": "#000000",
+          "name": "First Background"
         },
         {
           "slug": "contrast",
           "color": "#ffffff",
-          "name": "Contrast"
-        },
-        {
-          "slug": "primary",
-          "color": "#000000",
-          "name": "Primary"
-        },
-        {
-          "slug": "secondary",
-          "color": "#d6d6d6",
-          "name": "Secondary"
+          "name": "Text"
         },
         {
           "slug": "transparent",
           "color": "transparent",
           "name": "Transparent"
-        },
-        {
-          "name": "Text",
-          "slug": "text",
-          "color": "#FFFFFF"
-        },
-        {
-          "name": "First Background",
-          "slug": "first-background",
-          "color": "#000000"
         },
         {
           "name": "Second Background",
