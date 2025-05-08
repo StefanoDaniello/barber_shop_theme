@@ -17,7 +17,18 @@ module.exports = {
     // Script globali
     "./assets/js/**/*.js",
   ],
-  safelist: ["bg-red-500", "border-red-500", "text-red-500"],
+  // essa include sempre queste classi anche se non presenti nei file
+  // utile per un debaug del codice lato editor  di wp
+  safelist: [
+    "bg-red-500",
+    "border-red-500",
+    "text-red-500",
+    "w-full",
+    "h-full",
+    "flex",
+    "justify-center",
+    "align-center",
+  ],
   theme: {
     extend: {},
   },
