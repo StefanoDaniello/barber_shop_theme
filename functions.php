@@ -28,13 +28,21 @@ function barber_shop_theme_styles()
 add_action('wp_enqueue_scripts', 'barber_shop_theme_styles');
 
 
-
-// style css di tailwind
-function  tailwind_setup()
+// Funzione per caricare Tailwind CSS nel frontend e nell'editor
+function tailwind_setup()
 {
-	wp_enqueue_style('tailwind-style', get_template_directory_uri() . '/src/output.css');
+	// Per il frontend
+	wp_enqueue_style('tailwind-style', get_template_directory_uri() . '/assets/css/output.css');
+
+	// Per l'editor di WordPress
+	if (is_admin()) {
+		add_editor_style(get_parent_theme_file_uri('/assets/css/output.css'));
+	}
 }
+// Frontend
 add_action('wp_enqueue_scripts', 'tailwind_setup');
+// Backend
+add_action('admin_init', 'tailwind_setup');
 
 
 
