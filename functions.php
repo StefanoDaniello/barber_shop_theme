@@ -87,5 +87,23 @@ function register_patterns()
 			'content'     => file_get_contents(get_template_directory() . '/patterns/sponsor.php'),
 		)
 	);
+	register_block_pattern(
+		'barber_shop_theme/service-quality',
+		array(
+			'title'       => __('service-quality', 'textdomain'),
+			'categories'  => array('barber_shop_theme-sponsor'),
+			'content'     => file_get_contents(get_template_directory() . '/patterns/service-quality.php'),
+		)
+	);
 }
 add_action('init', 'register_patterns');
+
+
+
+// registrazione block custom
+
+function myblocks_block_init()
+{
+	register_block_type(__DIR__ . '/build/service-quality');
+}
+add_action('init', 'myblocks_block_init');
