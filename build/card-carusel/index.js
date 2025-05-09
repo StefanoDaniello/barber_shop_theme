@@ -11524,7 +11524,7 @@ function Edit({
         pagination: false,
         autoplay: false,
         loop: false,
-        allowTouchMove: false,
+        allowTouchMove: true,
         slidesPerView: 4,
         breakpoints: {
           1440: {
@@ -11542,7 +11542,7 @@ function Edit({
         },
         className: "overflow-x-hidden ",
         children: slides.map((slide, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, {
-          className: " h-[512px]",
+          className: " h-[512px] relative",
           children: [!slide.imageUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
             onSelect: media => updateSlide(index, "imageUrl", media.url),
             allowedTypes: ["image"],
@@ -11655,7 +11655,6 @@ __webpack_require__.r(__webpack_exports__);
  * Internal dependencies
  */
 
-// import Save from "./save";
 
 
 /**
@@ -11668,12 +11667,6 @@ __webpack_require__.r(__webpack_exports__);
    * @see ./edit.js
    */
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"]
-
-  /**
-   * 	@see ./save.js
-   *
-   * */
-  // save: Save,
 });
 
 /***/ }),

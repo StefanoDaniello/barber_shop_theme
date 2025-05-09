@@ -108,3 +108,42 @@ function myblocks_block_init()
 	register_block_type(__DIR__ . '/build/card-carusel');
 }
 add_action('init', 'myblocks_block_init');
+
+
+// Funzione per registrare il blocco
+function myblocks_register_card_carusel_block()
+{
+	// Registra il blocco
+	register_block_type(
+		__DIR__ . '/card-carusel', // Percorso della cartella del blocco
+		[
+			'render_callback' => 'myblocks_render_card_carusel', // Callback di rendering
+			'script' => 'myblocks-card-carusel-view', // JS per Swiper (frontend)
+		]
+	);
+}
+add_action('init', 'myblocks_register_card_carusel_block');
+
+// // Funzione per caricare JS e CSS di Swiper
+// function myblocks_enqueue_scripts()
+// {
+// 	// Registra il file JS per Swiper
+// 	wp_register_script(
+// 		'myblocks-card-carusel-view',
+// 		plugin_dir_url(__FILE__) . 'card-carusel/view.js', // Path del JS
+// 		['swiper'], // Dipendenza da Swiper (assicurati che Swiper sia già caricato)
+// 		'1.0.0',
+// 		true // Carica nel footer
+// 	);
+
+// 	// Registra i file CSS di Swiper
+// 	wp_register_style(
+// 		'myblocks-card-carusel-style',
+// 		'https://unpkg.com/swiper/swiper-bundle.min.css' // URL di Swiper CSS
+// 	);
+
+// 	// Carica i CSS e JS nel frontend
+// 	wp_enqueue_script('myblocks-card-carusel-view');
+// 	wp_enqueue_style('myblocks-card-carusel-style');
+// }
+// add_action('wp_enqueue_scripts', 'myblocks_enqueue_scripts');

@@ -94,7 +94,7 @@ export default function Edit({ attributes, setAttributes }) {
 					pagination={false}
 					autoplay={false}
 					loop={false}
-					allowTouchMove={false}
+					allowTouchMove={true}
 					slidesPerView={4}
 					breakpoints={{
 						1440: {
@@ -113,7 +113,7 @@ export default function Edit({ attributes, setAttributes }) {
 					className="overflow-x-hidden "
 				>
 					{slides.map((slide, index) => (
-						<SwiperSlide key={index} className=" h-[512px]">
+						<SwiperSlide key={index} className=" h-[512px] relative">
 							{!slide.imageUrl ? (
 								<MediaUpload
 									onSelect={(media) =>
