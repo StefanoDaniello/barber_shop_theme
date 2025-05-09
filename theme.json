@@ -36,6 +36,11 @@
 					"color": "#969696"
 				},
 				{
+					"name": "Separetor Color",
+					"slug": "separetor-color",
+					"color": "#3C3C3C"
+				},
+				{
 					"name": "Footer Text",
 					"slug": "footer-text",
 					"color": "#7C7C7C"
@@ -55,12 +60,12 @@
 			],
 			"duotone": [
 				{
-					"colors": [ "#d6d6d6", "#000000" ],
+					"colors": ["#d6d6d6", "#000000"],
 					"slug": "secondary-primary",
 					"name": "Secondary and primary"
 				},
 				{
-					"colors": [ "#000000", "#ffffff" ],
+					"colors": ["#000000", "#ffffff"],
 					"slug": "primary-contrast",
 					"name": "Primary and Contrast"
 				}
@@ -71,7 +76,7 @@
 			"wideSize": "1500px"
 		},
 		"spacing": {
-			"units": [ "px", "em", "rem", "vh", "vw", "%" ]
+			"units": ["px", "em", "rem", "vh", "vw", "%"]
 		},
 		"typography": {
 			"dropCap": false,
@@ -358,7 +363,7 @@
 		{
 			"name": "no-title",
 			"title": "No title",
-			"postTypes": [ "post", "page" ]
+			"postTypes": ["post", "page"]
 		}
 	]
 }
