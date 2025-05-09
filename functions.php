@@ -62,6 +62,12 @@ function my_custom_block_pattern_category()
 			'label' => __('Sponsor', 'textdomain'),
 		)
 	);
+	register_block_pattern_category(
+		'barber_shop_theme-columns',
+		array(
+			'label' => __('Columns', 'textdomain'),
+		)
+	);
 }
 
 add_action('init', 'my_custom_block_pattern_category');
@@ -95,6 +101,22 @@ function register_patterns()
 			'content'     => file_get_contents(get_template_directory() . '/patterns/service-quality.php'),
 		)
 	);
+	register_block_pattern(
+		'barber_shop_theme/barber-since',
+		array(
+			'title'       => __('barber-since', 'textdomain'),
+			'categories'  => array('barber_shop_theme-columns'),
+			'content'     => file_get_contents(get_template_directory() . '/patterns/barber-since.php'),
+		)
+	);
+	register_block_pattern(
+		'barber_shop_theme/pricing-plans',
+		array(
+			'title'       => __('pricing-plans', 'textdomain'),
+			'categories'  => array('barber_shop_theme-columns'),
+			'content'     => file_get_contents(get_template_directory() . '/patterns/pricing-plans.php'),
+		)
+	);
 }
 add_action('init', 'register_patterns');
 
@@ -123,6 +145,11 @@ function myblocks_register_card_carusel_block()
 	);
 }
 add_action('init', 'myblocks_register_card_carusel_block');
+
+
+
+
+
 
 // // Funzione per caricare JS e CSS di Swiper
 // function myblocks_enqueue_scripts()
