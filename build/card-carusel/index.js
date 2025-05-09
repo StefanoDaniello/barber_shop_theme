@@ -11388,7 +11388,7 @@ __webpack_require__.r(__webpack_exports__);
   \*************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"myblocks/card-carusel","version":"0.1.0","title":"Card Carusel","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"slides":{"type":"array","default":[]},"overlayColor":{"type":"string","default":"#000000"}},"textdomain":"card-carusel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"myblocks/card-carusel","version":"0.1.0","title":"Card Carusel","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"slides":{"type":"array","default":[]},"overlayColor":{"type":"string","default":"#000000"},"titleColor":{"type":"string","default":"#ffffff"},"categoryColor":{"type":"string","default":"#969696"}},"textdomain":"card-carusel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -11436,6 +11436,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Edit({
   attributes,
   setAttributes
@@ -11443,7 +11444,8 @@ function Edit({
   const {
     slides,
     overlayColor,
-    textColor
+    titleColor,
+    categoryColor
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();
 
@@ -11482,11 +11484,22 @@ function Edit({
       overlayColor: color
     });
   };
-  const updateTextColor = color => {
+
+  // Funzione per cambiare colore di titolo e categoria
+  const updateTitleColor = color => {
     setAttributes({
-      textColor: color
+      titleColor: color
     });
   };
+  const updateCategoryColor = color => {
+    setAttributes({
+      categoryColor: color
+    });
+  };
+  if (!slides.length) {
+    addSlide();
+  }
+  const themeColors = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useSetting)("color.palette");
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
     ...blockProps,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
@@ -11494,14 +11507,24 @@ function Edit({
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
           title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Slide Settings", "text-domain"),
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Overlay Color", "text-domain")
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
             value: overlayColor,
             onChange: updateOverlayColor,
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Overlay Color", "text-domain")
+            colors: themeColors
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Text Color", "text-domain")
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
-            value: textColor,
-            onChange: updateTextColor,
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Text Color", "text-domain")
+            value: titleColor,
+            onChange: updateTitleColor,
+            colors: themeColors
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Category Color", "text-domain")
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+            value: categoryColor,
+            onChange: updateCategoryColor,
+            colors: themeColors
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
@@ -11578,7 +11601,7 @@ function Edit({
               })
             })
           }), slide.imageUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "absolute bottom-5 right-5 p-4",
+            className: "absolute bottom-1/12 right-0 p-6 px-8 w-10/12",
             style: {
               backgroundColor: overlayColor,
               zIndex: 10
@@ -11588,18 +11611,18 @@ function Edit({
               value: slide.category,
               onChange: value => updateSlide(index, "category", value),
               placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Category", "text-domain"),
-              className: "text-sm",
+              className: "text-sm mb-1 ",
               style: {
-                color: textColor
+                color: categoryColor
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
               tagName: "h3",
               value: slide.title,
               onChange: value => updateSlide(index, "title", value),
               placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Title", "text-domain"),
-              className: "text-lg font-bold",
+              className: "text-2xl font-bold",
               style: {
-                color: textColor
+                color: titleColor
               }
             })]
           })]

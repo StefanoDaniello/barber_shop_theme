@@ -26,6 +26,14 @@ return array(
 			'overlayColor' => array(
 				'type' => 'string',
 				'default' => '#000000'
+			),
+			'titleColor' => array(
+				'type' => 'string',
+				'default' => '#ffffff'
+			),
+			'categoryColor' => array(
+				'type' => 'string',
+				'default' => '#969696'
 			)
 		),
 		'textdomain' => 'card-carusel',

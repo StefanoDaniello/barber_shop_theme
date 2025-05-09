@@ -17,6 +17,7 @@ import { PanelBody, Button, ColorPalette } from "@wordpress/components";
 // import "swiper/css/bundle";
 import "./editor.scss";
 import { __ } from "@wordpress/i18n";
+import { useSetting } from "@wordpress/block-editor";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -25,7 +26,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function Edit({ attributes, setAttributes }) {
-	const { slides, overlayColor, textColor } = attributes;
+	const { slides, overlayColor, titleColor, categoryColor } = attributes;
 
 	const blockProps = useBlockProps();
 
@@ -53,23 +54,41 @@ export default function Edit({ attributes, setAttributes }) {
 		setAttributes({ overlayColor: color });
 	};
 
-	const updateTextColor = (color) => {
-		setAttributes({ textColor: color });
+	// Funzione per cambiare colore di titolo e categoria
+	const updateTitleColor = (color) => {
+		setAttributes({ titleColor: color });
 	};
+
+	const updateCategoryColor = (color) => {
+		setAttributes({ categoryColor: color });
+	};
+
+	if (!slides.length) {
+		addSlide();
+	}
+	const themeColors = useSetting("color.palette");
 	return (
 		<div {...blockProps}>
 			<div className="bg-white">
 				<InspectorControls>
 					<PanelBody title={__("Slide Settings", "text-domain")}>
+						<p>{__("Overlay Color", "text-domain")}</p>
 						<ColorPalette
 							value={overlayColor}
 							onChange={updateOverlayColor}
-							label={__("Overlay Color", "text-domain")}
+							colors={themeColors}
 						/>
+						<p>{__("Text Color", "text-domain")}</p>
 						<ColorPalette
-							value={textColor}
-							onChange={updateTextColor}
-							label={__("Text Color", "text-domain")}
+							value={titleColor}
+							onChange={updateTitleColor}
+							colors={themeColors}
+						/>
+						<p>{__("Category Color", "text-domain")}</p>
+						<ColorPalette
+							value={categoryColor}
+							onChange={updateCategoryColor}
+							colors={themeColors}
 						/>
 					</PanelBody>
 				</InspectorControls>
@@ -161,7 +180,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 							{slide.imageUrl && (
 								<div
-									className="absolute bottom-5 right-5 p-4"
+									className="absolute bottom-1/12 right-0 p-6 px-8 w-10/12"
 									style={{
 										backgroundColor: overlayColor,
 										zIndex: 10,
@@ -172,16 +191,16 @@ export default function Edit({ attributes, setAttributes }) {
 										value={slide.category}
 										onChange={(value) => updateSlide(index, "category", value)}
 										placeholder={__("Category", "text-domain")}
-										className="text-sm"
-										style={{ color: textColor }}
+										className="text-sm mb-1 "
+										style={{ color: categoryColor }}
 									/>
 									<RichText
 										tagName="h3"
 										value={slide.title}
 										onChange={(value) => updateSlide(index, "title", value)}
 										placeholder={__("Title", "text-domain")}
-										className="text-lg font-bold"
-										style={{ color: textColor }}
+										className="text-2xl font-bold"
+										style={{ color: titleColor }}
 									/>
 								</div>
 							)}

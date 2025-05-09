@@ -19,6 +19,14 @@
     "overlayColor": {
       "type": "string",
       "default": "#000000"
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "categoryColor": {
+      "type": "string",
+      "default": "#969696"
     }
   },
   "textdomain": "card-carusel",
