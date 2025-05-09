@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "myblocks/card-carusel",
+	"version": "0.1.0",
+	"title": "Card Carusel",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"slides": {
+			"type": "array",
+			"default": [
+				{
+					"title": "Card title",
+					"description": "Card description",
+					"image": "http://localhost:10003/wp-content/uploads/2025/05/img-8-1-1.png"
+				}
+			]
+		},
+		"overlayColor": {
+			"type": "string",
+			"default": "#000000"
+		}
+	},
+	"textdomain": "card-carusel",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

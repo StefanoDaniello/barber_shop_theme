@@ -105,5 +105,6 @@ add_action('init', 'register_patterns');
 function myblocks_block_init()
 {
 	register_block_type(__DIR__ . '/build/service-quality');
+	register_block_type(__DIR__ . '/build/card-carusel');
 }
 add_action('init', 'myblocks_block_init');
