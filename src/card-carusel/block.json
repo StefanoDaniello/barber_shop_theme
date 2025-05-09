@@ -14,13 +14,7 @@
 	"attributes": {
 		"slides": {
 			"type": "array",
-			"default": [
-				{
-					"title": "Card title",
-					"description": "Card description",
-					"image": "http://localhost:10003/wp-content/uploads/2025/05/img-8-1-1.png"
-				}
-			]
+			"default": []
 		},
 		"overlayColor": {
 			"type": "string",

@@ -95,25 +95,25 @@ export default function Edit({ attributes, setAttributes }) {
 					autoplay={false}
 					loop={false}
 					allowTouchMove={false}
-					slidesPerView={slides.length}
+					slidesPerView={4}
 					breakpoints={{
 						1440: {
-							slidesPerView: slides.length,
+							slidesPerView: 4,
 						},
 						1024: {
-							slidesPerView: slides.length - 1,
+							slidesPerView: 3,
 						},
 						768: {
-							slidesPerView: slides.length - 2,
+							slidesPerView: 2,
 						},
 						480: {
-							slidesPerView: slides.length - 3,
+							slidesPerView: 1,
 						},
 					}}
 					className="overflow-x-hidden "
 				>
 					{slides.map((slide, index) => (
-						<SwiperSlide key={index} className=" h-[512px] overflow-y-hidden">
+						<SwiperSlide key={index} className=" h-[512px]">
 							{!slide.imageUrl ? (
 								<MediaUpload
 									onSelect={(media) =>
