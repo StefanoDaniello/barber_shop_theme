@@ -58,7 +58,7 @@
     },
     "backgroundColor": {
       "type": "string",
-      "default": "base"
+      "default": "dark-gray"
     }
   },
   "textdomain": "client-reviews",

@@ -23,10 +23,29 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#view-script
  */
-
-/* eslint-disable no-console */
-console.log('Hello World! (from myblocks-client-reviews block)');
-/* eslint-enable no-console */
+document.addEventListener("DOMContentLoaded", function () {
+  const el = document.querySelector(".swiper-client-reviews");
+  if (!el) return;
+  const autoplayAttr = el.dataset.autoplay == true;
+  if (typeof Swiper !== "undefined") {
+    new Swiper(el, {
+      loop: false,
+      spaceBetween: 0,
+      navigation: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      slidesPerView: 1,
+      autoplay: autoplayAttr ? {
+        delay: 3000
+      } : false,
+      allowTouchMove: true
+    });
+  } else {
+    console.warn("Swiper non è stato caricato.");
+  }
+});
 /******/ })()
 ;
 //# sourceMappingURL=view.js.map

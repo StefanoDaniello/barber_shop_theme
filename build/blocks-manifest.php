@@ -105,7 +105,7 @@ return array(
 			),
 			'backgroundColor' => array(
 				'type' => 'string',
-				'default' => 'base'
+				'default' => 'dark-gray'
 			)
 		),
 		'textdomain' => 'client-reviews',
