@@ -11446,24 +11446,24 @@ function Edit({
   const swiperRef = (0,react__WEBPACK_IMPORTED_MODULE_4__.useRef)(null);
   const [prevSlideCount, setPrevSlideCount] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(slides.length);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
-  const backgroundColorClass = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.getColorClassName)("background-color", backgroundColor);
-  const titleColorClass = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.getColorClassName)("color", titleColor);
-  const categoryColorClass = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.getColorClassName)("color", categoryColor);
-  const reviewsColorClass = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.getColorClassName)("color", reviewsColor);
-  const themeColors = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useSetting)("color.palette");
+  const backgroundColorClass = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.getColorClassName)('background-color', backgroundColor);
+  const titleColorClass = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.getColorClassName)('color', titleColor);
+  const categoryColorClass = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.getColorClassName)('color', categoryColor);
+  const reviewsColorClass = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.getColorClassName)('color', reviewsColor);
+  const themeColors = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useSetting)('color.palette');
 
   // Funzione per ottenere lo slug da un valore esadecimale
   const getSlugFromColor = color => {
-    if (!color) return "";
+    if (!color) return '';
     const found = themeColors?.find(c => c.color.toLowerCase() === color.toLowerCase());
-    return found?.slug || "";
+    return found?.slug || '';
   };
 
   // Funzione per ottenere il colore esadecimale dallo slug
   const getColorFromSlug = slug => {
-    if (!slug) return "";
+    if (!slug) return '';
     const found = themeColors?.find(c => c.slug === slug);
-    return found?.color || "";
+    return found?.color || '';
   };
 
   // Funzione per aggiornare i dettagli di ogni slide
@@ -11478,9 +11478,9 @@ function Edit({
   // Funzione per aggiungere una nuova slide
   const addSlide = () => {
     const newSlides = [...slides, {
-      review: "",
-      name: "",
-      category: ""
+      review: '',
+      name: '',
+      category: ''
     }];
     setAttributes({
       slides: newSlides
@@ -11530,13 +11530,13 @@ function Edit({
               backgroundColor: slug
             });
           },
-          label: "Background",
+          label: 'Background',
           colors: themeColors,
           clearable: true,
           //  Aggiunge il pulsante "Rimuovi colore"
           onClear: () => {
             setAttributes({
-              backgroundColor: ""
+              backgroundColor: ''
             });
           }
         }]
@@ -11550,12 +11550,12 @@ function Edit({
               titleColor: slug
             });
           },
-          label: "Title Color",
+          label: 'Title Color',
           colors: themeColors,
           clearable: true,
           onClear: () => {
             setAttributes({
-              titleColor: ""
+              titleColor: ''
             });
           }
         }]
@@ -11569,12 +11569,12 @@ function Edit({
               categoryColor: slug
             });
           },
-          label: "Category Color",
+          label: 'Category Color',
           colors: themeColors,
           clearable: true,
           onClear: () => {
             setAttributes({
-              categoryColor: ""
+              categoryColor: ''
             });
           }
         }]
@@ -11588,12 +11588,12 @@ function Edit({
               reviewsColor: slug
             });
           },
-          label: "Reviews Color",
+          label: 'Reviews Color',
           colors: themeColors,
           clearable: true,
           onClear: () => {
             setAttributes({
-              reviewsColor: ""
+              reviewsColor: ''
             });
           }
         }]
@@ -11607,12 +11607,12 @@ function Edit({
           isPrimary: true,
           className: "!bg-red-500",
           disabled: slides.length == 1 || !slides.length,
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("remove Slide", "text-domain")
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('remove Slide', 'text-domain')
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
           onClick: addSlide,
           isPrimary: true,
           disabled: slides.length == 5,
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Add Slide", "text-domain")
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Slide', 'text-domain')
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
         className: "container mx-auto text-center",
@@ -11652,20 +11652,20 @@ function Edit({
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
               tagName: "p",
               value: slide.review,
-              onChange: value => updateSlide(index, "reviews", value),
+              onChange: value => updateSlide(index, 'reviews', value),
               className: `${reviewsColorClass} text-2xl`,
               placeholder: "Recensione"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "h3",
             value: slide.name,
-            onChange: value => updateSlide(index, "name", value),
+            onChange: value => updateSlide(index, 'name', value),
             className: `${titleColorClass} text-2xl mb-3`,
             placeholder: "Nome"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "p",
             value: slide.category,
-            onChange: value => updateSlide(index, "category", value),
+            onChange: value => updateSlide(index, 'category', value),
             className: `${categoryColorClass} text-sm `,
             placeholder: "Categoria"
           })]

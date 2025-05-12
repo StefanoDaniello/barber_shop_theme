@@ -130,6 +130,7 @@ function myblocks_block_init()
 	register_block_type(__DIR__ . '/build/service-quality');
 	register_block_type(__DIR__ . '/build/card-carusel');
 	register_block_type(__DIR__ . '/build/client-reviews');
+	register_block_type(__DIR__ . '/build/myhero');
 }
 add_action('init', 'myblocks_block_init');
 

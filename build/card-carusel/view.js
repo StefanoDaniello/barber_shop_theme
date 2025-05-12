@@ -25,12 +25,12 @@
  */
 
 /* eslint-disable no-console */
-console.log("Hello World! (from myblocks-card-carusel block)");
+console.log('Hello World! (from myblocks-card-carusel block)');
 /* eslint-enable no-console */
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof Swiper !== "undefined") {
-    new Swiper(".wp-block-myblocks-card-carusel .swiper", {
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.wp-block-myblocks-card-carusel .swiper', {
       loop: false,
       centeredSlides: false,
       spaceBetween: 0,
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   } else {
-    console.warn("Swiper non è stato caricato.");
+    console.warn('Swiper non è stato caricato.');
   }
 });
 /******/ })()

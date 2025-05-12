@@ -23,17 +23,17 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#view-script
  */
-document.addEventListener("DOMContentLoaded", function () {
-  const el = document.querySelector(".swiper-client-reviews");
+document.addEventListener('DOMContentLoaded', function () {
+  const el = document.querySelector('.swiper-client-reviews');
   if (!el) return;
   const autoplayAttr = el.dataset.autoplay == true;
-  if (typeof Swiper !== "undefined") {
+  if (typeof Swiper !== 'undefined') {
     new Swiper(el, {
       loop: false,
       spaceBetween: 0,
       navigation: false,
       pagination: {
-        el: ".swiper-pagination",
+        el: '.swiper-pagination',
         clickable: true
       },
       slidesPerView: 1,
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
       allowTouchMove: true
     });
   } else {
-    console.warn("Swiper non è stato caricato.");
+    console.warn('Swiper non è stato caricato.');
   }
 });
 /******/ })()
