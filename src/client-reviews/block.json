@@ -1,6 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
+	"apiVersion": 2,
 	"name": "myblocks/client-reviews",
 	"version": "0.1.0",
 	"title": "Client Reviews",
@@ -10,6 +10,32 @@
 	"example": {},
 	"supports": {
 		"html": false
+	},
+	"attributes": {
+		"slides": {
+			"type": "number",
+			"default": 1
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": true
+		},
+		"titleColor": {
+			"type": "string",
+			"default": "has-contrast-color"
+		},
+		"categoryColor": {
+			"type": "string",
+			"default": "has-medium-gray-color"
+		},
+		"reviewsColor": {
+			"type": "string",
+			"default": "has-contrast-color"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "has-base-background-color"
+		}
 	},
 	"textdomain": "client-reviews",
 	"editorScript": "file:./index.js",

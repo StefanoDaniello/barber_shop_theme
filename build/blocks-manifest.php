@@ -45,7 +45,7 @@ return array(
 	),
 	'client-reviews' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3,
+		'apiVersion' => 2,
 		'name' => 'myblocks/client-reviews',
 		'version' => '0.1.0',
 		'title' => 'Client Reviews',
@@ -57,6 +57,32 @@ return array(
 		),
 		'supports' => array(
 			'html' => false
+		),
+		'attributes' => array(
+			'slides' => array(
+				'type' => 'number',
+				'default' => 1
+			),
+			'autoplay' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'titleColor' => array(
+				'type' => 'string',
+				'default' => 'has-contrast-color'
+			),
+			'categoryColor' => array(
+				'type' => 'string',
+				'default' => 'has-medium-gray-color'
+			),
+			'reviewsColor' => array(
+				'type' => 'string',
+				'default' => 'has-contrast-color'
+			),
+			'backgroundColor' => array(
+				'type' => 'string',
+				'default' => 'has-base-background-color'
+			)
 		),
 		'textdomain' => 'client-reviews',
 		'editorScript' => 'file:./index.js',

@@ -84,11 +84,11 @@ function Edit({
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Colore Cerchio', 'textdomain'),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Colore Cerchio", "textdomain"),
         initialOpen: true,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Colore Cerchio', 'textdomain')
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Colore Cerchio", "textdomain")
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
             value: circleColor,
             onChange: value => setAttributes({
@@ -104,13 +104,13 @@ function Edit({
           onChange: color => setAttributes({
             sectionTitleColor: color
           }),
-          label: 'Colore titolo'
+          label: "Colore titolo"
         }, {
           value: sectionDescriptionColor,
           onChange: color => setAttributes({
             sectionDescriptionColor: color
           }),
-          label: 'Colore descrizione'
+          label: "Colore descrizione"
         }]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -121,7 +121,7 @@ function Edit({
           tagName: "p",
           value: sectionDescription,
           onChange: value => setAttributes({
-            sectionTitle: value
+            sectionDescription: value
           }),
           placeholder: "Enter section description",
           style: {
@@ -134,7 +134,7 @@ function Edit({
             tagName: "h2",
             value: sectionTitle,
             onChange: value => setAttributes({
-              sectionDescription: value
+              sectionTitle: value
             }),
             placeholder: "Enter section title",
             style: {
@@ -152,16 +152,16 @@ function Edit({
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("figure", {
               className: "w-full h-full relative z-10",
               children: item.image ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-                onSelect: media => updateItem(index, 'image', media.url),
-                allowedTypes: ['image'],
+                onSelect: media => updateItem(index, "image", media.url),
+                allowedTypes: ["image"],
                 value: item.image,
                 render: ({
                   open
                 }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   onClick: open,
                   style: {
-                    cursor: 'pointer',
-                    display: 'inline-block'
+                    cursor: "pointer",
+                    display: "inline-block"
                   },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                     src: item.image,
@@ -173,8 +173,8 @@ function Edit({
               }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                 className: "flex justify-center items-center w-full h-full",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-                  onSelect: media => updateItem(index, 'image', media.url),
-                  allowedTypes: ['image'],
+                  onSelect: media => updateItem(index, "image", media.url),
+                  allowedTypes: ["image"],
                   render: ({
                     open
                   }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
@@ -186,18 +186,18 @@ function Edit({
                 })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: `absolute ${index == 1 ? 'top-5' : 'bottom-5'} left-1/3 z-0`,
+              className: `absolute ${index == 1 ? "top-5" : "bottom-5"} left-1/3 z-0`,
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
                 className: `w-50 h-50 rounded-full block`,
                 style: {
-                  backgroundColor: circleColor || '#f7f7f7'
+                  backgroundColor: circleColor || "#f7f7f7"
                 }
               })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "h3",
             value: item.title,
-            onChange: value => updateItem(index, 'title', value),
+            onChange: value => updateItem(index, "title", value),
             placeholder: `Enter title ${index + 1}`,
             style: {
               color: sectionTitleColor
@@ -206,7 +206,7 @@ function Edit({
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
             tagName: "p",
             value: item.text,
-            onChange: value => updateItem(index, 'text', value),
+            onChange: value => updateItem(index, "text", value),
             placeholder: `Enter description ${index + 1}`,
             style: {
               color: sectionDescriptionColor

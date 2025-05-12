@@ -1,5 +1,5 @@
 {
-	"version": 2,
+	"version": 3,
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"settings": {
 		"appearanceTools": true,
@@ -8,12 +8,12 @@
 				{
 					"slug": "base",
 					"color": "#000000",
-					"name": "First Background"
+					"name": "Black"
 				},
 				{
 					"slug": "contrast",
 					"color": "#ffffff",
-					"name": "Text"
+					"name": "White"
 				},
 				{
 					"slug": "transparent",
@@ -21,29 +21,29 @@
 					"name": "Transparent"
 				},
 				{
-					"name": "Second Background",
-					"slug": "second-background",
-					"color": "#0D0D0D"
+					"slug": "dark-gray",
+					"color": "#0D0D0D",
+					"name": "Dark Gray"
 				},
 				{
-					"name": "Contrast Background",
-					"slug": "contrast-background",
-					"color": "#F7F7F7"
+					"slug": "light-gray",
+					"color": "#F7F7F7",
+					"name": "Light Gray"
 				},
 				{
-					"name": "Card Tag",
-					"slug": "card-tag",
-					"color": "#969696"
+					"slug": "medium-gray",
+					"color": "#969696",
+					"name": "Medium Gray"
 				},
 				{
-					"name": "Separetor Color",
-					"slug": "separetor-color",
-					"color": "#3C3C3C"
+					"slug": "separator",
+					"color": "#3C3C3C",
+					"name": "Separator"
 				},
 				{
-					"name": "Footer Text",
-					"slug": "footer-text",
-					"color": "#7C7C7C"
+					"slug": "footer-gray",
+					"color": "#7C7C7C",
+					"name": "Footer Gray"
 				}
 			],
 			"gradients": [
@@ -60,12 +60,12 @@
 			],
 			"duotone": [
 				{
-					"colors": [ "#d6d6d6", "#000000" ],
+					"colors": ["#d6d6d6", "#000000"],
 					"slug": "secondary-primary",
 					"name": "Secondary and primary"
 				},
 				{
-					"colors": [ "#000000", "#ffffff" ],
+					"colors": ["#000000", "#ffffff"],
 					"slug": "primary-contrast",
 					"name": "Primary and Contrast"
 				}
@@ -76,7 +76,7 @@
 			"wideSize": "1500px"
 		},
 		"spacing": {
-			"units": [ "px", "em", "rem", "vh", "vw", "%" ]
+			"units": ["px", "em", "rem", "vh", "vw", "%"]
 		},
 		"typography": {
 			"dropCap": false,
@@ -363,7 +363,7 @@
 		{
 			"name": "no-title",
 			"title": "No title",
-			"postTypes": [ "post", "page" ]
+			"postTypes": ["post", "page"]
 		}
 	]
 }

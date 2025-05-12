@@ -1,41 +1,158 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
+import { __ } from "@wordpress/i18n";
+import "./editor.scss";
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	getColorClassName,
+	PanelColorSettings,
+	RichText,
+	// MediaUpload,
+	InspectorControls,
+} from "@wordpress/block-editor";
+import { PanelBody, ColorPalette } from "@wordpress/components";
+import { useSetting } from "@wordpress/block-editor";
+import { useEffect } from "react";
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './editor.scss';
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, Pagination, Autoplay } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {Element} Element to render.
- */
-export default function Edit() {
+export default function Edit({ attributes, setAttributes }) {
+	const {
+		slides,
+		autoplay,
+		titleColor,
+		categoryColor,
+		reviewsColor,
+		backgroundColor,
+	} = attributes;
+
+	// Funzione per ottenere lo slug da un valore esadecimale
+	const getSlugFromColor = (color) => {
+		if (!color) return "";
+		const found = themeColors?.find(
+			(c) => c.color.toLowerCase() === color.toLowerCase(),
+		);
+		return found?.slug || "";
+	};
+
+	// Funzione per ottenere il colore esadecimale dallo slug
+	const getColorFromSlug = (slug) => {
+		if (!slug) return "";
+		const found = themeColors?.find((c) => c.slug === slug);
+		return found?.color || "";
+	};
+
+	const blockProps = useBlockProps();
+	const backgroundColorClass = getColorClassName(
+		"background-color",
+		backgroundColor,
+	);
+	const titleColorClass = getColorClassName("color", titleColor);
+	const categoryColorClass = getColorClassName("color", categoryColor);
+	const reviewsColorClass = getColorClassName("color", reviewsColor);
+	const themeColors = useSetting("color.palette");
+
+	useEffect(() => {
+		console.log(backgroundColorClass);
+		console.log(titleColorClass);
+		console.log(categoryColorClass);
+		console.log(reviewsColorClass);
+	}, [
+		backgroundColorClass,
+		titleColorClass,
+		categoryColorClass,
+		reviewsColorClass,
+	]);
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Client Reviews – hello from the editor!',
-				'client-reviews'
-			) }
-		</p>
+		<div {...blockProps}>
+			<InspectorControls>
+				<PanelColorSettings
+					title="Background"
+					colorSettings={[
+						{
+							value: getColorFromSlug(backgroundColor),
+							onChange: (color) => {
+								const slug = getSlugFromColor(color);
+								setAttributes({ backgroundColor: slug });
+							},
+							label: "Background",
+							colors: themeColors,
+							clearable: true, //  Aggiunge il pulsante "Rimuovi colore"
+							onClear: () => {
+								setAttributes({ backgroundColor: "" });
+							},
+						},
+					]}
+				/>
+				<PanelColorSettings
+					title="Title Color"
+					colorSettings={[
+						{
+							value: getColorFromSlug(titleColor),
+							onChange: (color) => {
+								const slug = getSlugFromColor(color);
+								setAttributes({ titleColor: slug });
+							},
+							label: "Title Color",
+							colors: themeColors,
+							clearable: true,
+							onClear: () => {
+								setAttributes({ titleColor: "" });
+							},
+						},
+					]}
+				/>
+				<PanelColorSettings
+					title="Category Color"
+					colorSettings={[
+						{
+							value: getColorFromSlug(categoryColor),
+							onChange: (color) => {
+								const slug = getSlugFromColor(color);
+								setAttributes({ categoryColor: slug });
+							},
+							label: "Category Color",
+							colors: themeColors,
+							clearable: true,
+							onClear: () => {
+								setAttributes({ categoryColor: "" });
+							},
+						},
+					]}
+				/>
+				<PanelColorSettings
+					title="Reviews Color"
+					colorSettings={[
+						{
+							value: getColorFromSlug(reviewsColor),
+							onChange: (color) => {
+								const slug = getSlugFromColor(color);
+								setAttributes({ reviewsColor: slug });
+							},
+							label: "Reviews Color",
+							colors: themeColors,
+							clearable: true,
+							onClear: () => {
+								setAttributes({ reviewsColor: "" });
+							},
+						},
+					]}
+				/>
+			</InspectorControls>
+			<div className={backgroundColorClass}>
+				<h2>lnqwklnn</h2>
+				<h2>lnqwklnn</h2>
+				<h2>lnqwklnn</h2>
+				<h2>lnqwklnn</h2>
+				<h2>lnqwklnn</h2>
+				<h2>lnqwklnn</h2>
+				<h2>lnqwklnn</h2>
+				<h2>lnqwklnn</h2>
+				<h2>lnqwklnn</h2>
+			</div>
+		</div>
 	);
 }
