@@ -369,7 +369,7 @@ function Save({
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto",
+        className: "flex flex-wrap justify-center align-center gap-8 max-w-7xl mx-auto",
         children: items.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "flex flex-col items-center text-center gap-4",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {

@@ -94,14 +94,6 @@ function register_patterns()
 		)
 	);
 	register_block_pattern(
-		'barber_shop_theme/service-quality',
-		array(
-			'title'       => __('service-quality', 'textdomain'),
-			'categories'  => array('barber_shop_theme-sponsor'),
-			'content'     => file_get_contents(get_template_directory() . '/patterns/service-quality.php'),
-		)
-	);
-	register_block_pattern(
 		'barber_shop_theme/barber-since',
 		array(
 			'title'       => __('barber-since', 'textdomain'),

@@ -12,7 +12,8 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --webpack-copy-php --blocks-manifest"
+		"start": "wp-scripts start --webpack-copy-php --blocks-manifest",
+		"tailwind": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^30.16.0"

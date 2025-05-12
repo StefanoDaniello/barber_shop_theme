@@ -54,7 +54,7 @@ export default function Save({ attributes }) {
 				</div>
 
 				{/* Griglia di colonne */}
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+				<div className="flex flex-wrap justify-center align-center gap-8 max-w-7xl mx-auto">
 					{items.map((item, index) => (
 						<div
 							key={index}

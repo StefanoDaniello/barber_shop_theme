@@ -9,7 +9,8 @@
  * @since 1.0.0
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}},"background":
+ {"backgroundImage":{"url":"/wp-content/barber_shop_theme/assets/pricing-bg.png","id":350,"source":"file","title":"home4-2 1"},"backgroundSize":"cover"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:group {"style":{"spacing":{"blockGap":"0","margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--60)"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|card-tag"}}}},"textColor":"card-tag","fontSize":"small"} -->
         <p class="has-card-tag-color has-text-color has-link-color has-small-font-size">CHOSE YOUR BEST</p>
