@@ -60,8 +60,24 @@ return array(
 		),
 		'attributes' => array(
 			'slides' => array(
-				'type' => 'number',
-				'default' => 1
+				'type' => 'array',
+				'default' => array(
+					array(
+						'review' => '“The Barbers is an affordable, convenient and good quality place to get my hair cut. It is a friendly, laid back environment with great professionals”',
+						'name' => 'John Doe',
+						'category' => 'CLIENT OF BARBERSHOP'
+					),
+					array(
+						'review' => '“The Barbers is an affordable, convenient and good quality place to get my hair cut. It is a friendly, laid back environment with great professionals”',
+						'name' => 'Tyler Smith',
+						'category' => 'CLIENT OF BARBERSHOP'
+					),
+					array(
+						'review' => '“The Barbers is an affordable, convenient and good quality place to get my hair cut. It is a friendly, laid back environment with great professionals”',
+						'name' => 'Mario Rossi',
+						'category' => 'CLIENT OF BARBERSHOP'
+					)
+				)
 			),
 			'autoplay' => array(
 				'type' => 'boolean',
@@ -69,19 +85,27 @@ return array(
 			),
 			'titleColor' => array(
 				'type' => 'string',
-				'default' => 'has-contrast-color'
+				'default' => 'contrast'
+			),
+			'title' => array(
+				'type' => 'string',
+				'default' => 'WHAT CLIENTS SAY.'
 			),
 			'categoryColor' => array(
 				'type' => 'string',
-				'default' => 'has-medium-gray-color'
+				'default' => 'medium-gray'
+			),
+			'category' => array(
+				'type' => 'string',
+				'default' => 'EXPLORE OUR TEAM'
 			),
 			'reviewsColor' => array(
 				'type' => 'string',
-				'default' => 'has-contrast-color'
+				'default' => 'contrast'
 			),
 			'backgroundColor' => array(
 				'type' => 'string',
-				'default' => 'has-base-background-color'
+				'default' => 'base'
 			)
 		),
 		'textdomain' => 'client-reviews',

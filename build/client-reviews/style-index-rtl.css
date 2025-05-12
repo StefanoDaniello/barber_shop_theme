@@ -1,9 +1,41 @@
 /*!******************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/client-reviews/style.scss ***!
   \******************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
 /**
  * The following styles get applied both on the front of your site
  * and in the editor.
  *
  * Replace them with your own styles or remove the file completely.
  */
+/* Swiper Container - Imposta le dimensioni e la posizione */
+.swiper-client-reviews {
+  /* Personalizzazione dei bullet della paginazione */
+  /* Dot attivo - Cambia il colore e l'ombra */
+  /* Dot non attivo - Modifica la trasparenza e aggiungi il bordo */
+  /* Hover sui bullet - Aumenta la dimensione e cambia il colore al passaggio del mouse */
+}
+.swiper-client-reviews .swiper-pagination-bullet {
+  width: 12px !important; /* Dimensione del dot */
+  height: 12px !important; /* Dimensione del dot */
+  background-color: #ffffff !important; /* Colore del dot */
+  border-radius: 50% !important; /* Rende il dot rotondo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important; /* Ombra sui dots */
+}
+.swiper-client-reviews .swiper-pagination-bullet-active {
+  background-color: #ffffff !important; /* Colore del dot attivo */
+  box-shadow: 0 0 10px rgb(0, 0, 0) !important; /* Ombra più intensa per il dot attivo */
+}
+.swiper-client-reviews .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+  opacity: 1 !important; /* Opacità dei dot non attivi */
+  border: 2px solid #ffffff !important; /* Bordi bianchi */
+  border-radius: 50% !important; /* Rende il dot rotondo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important; /* Ombra sui dots non attivi */
+  background-color: transparent !important; /* Colore del dot */
+}
+.swiper-client-reviews .swiper-pagination-bullet:hover {
+  background-color: #ffffff !important; /* Colore al passaggio del mouse */
+  transition: background-color 0.3s ease !important; /* Transizione al passaggio del mouse */
+  width: 14px !important; /* Aumenta la dimensione al passaggio del mouse */
+  height: 14px !important; /* Aumenta la dimensione al passaggio del mouse */
+}

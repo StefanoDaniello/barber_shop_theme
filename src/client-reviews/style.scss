@@ -5,8 +5,37 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-// .wp-block-myblocks-client-reviews {
-// 	background-color: #21759b;
-// 	color: #fff;
-// 	padding: 2px;
-// }
+/* Swiper Container - Imposta le dimensioni e la posizione */
+.swiper-client-reviews {
+	/* Personalizzazione dei bullet della paginazione */
+	.swiper-pagination-bullet {
+		width: 12px !important; /* Dimensione del dot */
+		height: 12px !important; /* Dimensione del dot */
+		background-color: #ffffff !important; /* Colore del dot */
+		border-radius: 50% !important; /* Rende il dot rotondo */
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important; /* Ombra sui dots */
+	}
+
+	/* Dot attivo - Cambia il colore e l'ombra */
+	.swiper-pagination-bullet-active {
+		background-color: #ffffff !important; /* Colore del dot attivo */
+		box-shadow: 0 0 10px rgba(0, 0, 0, 1) !important; /* Ombra più intensa per il dot attivo */
+	}
+
+	/* Dot non attivo - Modifica la trasparenza e aggiungi il bordo */
+	.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+		opacity: 1 !important; /* Opacità dei dot non attivi */
+		border: 2px solid #ffffff !important; /* Bordi bianchi */
+		border-radius: 50% !important; /* Rende il dot rotondo */
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important; /* Ombra sui dots non attivi */
+		background-color: transparent !important; /* Colore del dot */
+	}
+
+	/* Hover sui bullet - Aumenta la dimensione e cambia il colore al passaggio del mouse */
+	.swiper-pagination-bullet:hover {
+		background-color: #ffffff !important; /* Colore al passaggio del mouse */
+		transition: background-color 0.3s ease !important; /* Transizione al passaggio del mouse */
+		width: 14px !important; /* Aumenta la dimensione al passaggio del mouse */
+		height: 14px !important; /* Aumenta la dimensione al passaggio del mouse */
+	}
+}

@@ -13,8 +13,24 @@
 	},
 	"attributes": {
 		"slides": {
-			"type": "number",
-			"default": 1
+			"type": "array",
+			"default": [
+				{
+					"review": "“The Barbers is an affordable, convenient and good quality place to get my hair cut. It is a friendly, laid back environment with great professionals”",
+					"name": "John Doe",
+					"category": "CLIENT OF BARBERSHOP"
+				},
+				{
+					"review": "“The Barbers is an affordable, convenient and good quality place to get my hair cut. It is a friendly, laid back environment with great professionals”",
+					"name": "Tyler Smith",
+					"category": "CLIENT OF BARBERSHOP"
+				},
+				{
+					"review": "“The Barbers is an affordable, convenient and good quality place to get my hair cut. It is a friendly, laid back environment with great professionals”",
+					"name": "Mario Rossi",
+					"category": "CLIENT OF BARBERSHOP"
+				}
+			]
 		},
 		"autoplay": {
 			"type": "boolean",
@@ -22,19 +38,27 @@
 		},
 		"titleColor": {
 			"type": "string",
-			"default": "has-contrast-color"
+			"default": "contrast"
+		},
+		"title": {
+			"type": "string",
+			"default": "WHAT CLIENTS SAY."
 		},
 		"categoryColor": {
 			"type": "string",
-			"default": "has-medium-gray-color"
+			"default": "medium-gray"
+		},
+		"category": {
+			"type": "string",
+			"default": "EXPLORE OUR TEAM"
 		},
 		"reviewsColor": {
 			"type": "string",
-			"default": "has-contrast-color"
+			"default": "contrast"
 		},
 		"backgroundColor": {
 			"type": "string",
-			"default": "has-base-background-color"
+			"default": "base"
 		}
 	},
 	"textdomain": "client-reviews",
