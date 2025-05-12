@@ -21,34 +21,5 @@
  */
 
 /* eslint-disable no-console */
-console.log("Hello World! (from myblocks-card-carusel block)");
+console.log( 'Hello World! (from myblocks-client-reviews block)' );
 /* eslint-enable no-console */
-
-document.addEventListener("DOMContentLoaded", function () {
-	if (typeof Swiper !== "undefined") {
-		new Swiper(".wp-block-myblocks-card-carusel .swiper", {
-			loop: false,
-			centeredSlides: false,
-			spaceBetween: 0,
-			allowTouchMove: true,
-			slidesPerView: 4,
-
-			breakpoints: {
-				1440: {
-					slidesPerView: 4,
-				},
-				1024: {
-					slidesPerView: 3,
-				},
-				768: {
-					slidesPerView: 2,
-				},
-				480: {
-					slidesPerView: 1,
-				},
-			},
-		});
-	} else {
-		console.warn("Swiper non è stato caricato.");
-	}
-});

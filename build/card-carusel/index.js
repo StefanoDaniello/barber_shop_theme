@@ -11461,9 +11461,9 @@ function Edit({
   // Funzione per aggiungere una nuova slide
   const addSlide = () => {
     const newSlides = [...slides, {
-      imageUrl: "",
-      category: "",
-      title: ""
+      imageUrl: '',
+      category: '',
+      title: ''
     }];
     setAttributes({
       slides: newSlides
@@ -11499,28 +11499,28 @@ function Edit({
   if (!slides.length) {
     addSlide();
   }
-  const themeColors = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useSetting)("color.palette");
+  const themeColors = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useSetting)('color.palette');
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
     ...blockProps,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
       className: "bg-white",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Slide Settings", "text-domain"),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Slide Settings', 'text-domain'),
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Overlay Color", "text-domain")
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Overlay Color', 'text-domain')
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
             value: overlayColor,
             onChange: updateOverlayColor,
             colors: themeColors
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Text Color", "text-domain")
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Text Color', 'text-domain')
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
             value: titleColor,
             onChange: updateTitleColor,
             colors: themeColors
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Category Color", "text-domain")
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Category Color', 'text-domain')
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
             value: categoryColor,
             onChange: updateCategoryColor,
@@ -11534,12 +11534,12 @@ function Edit({
           isPrimary: true,
           className: "!bg-red-500",
           disabled: slides.length == 1 || !slides.length,
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("remove Slide", "text-domain")
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('remove Slide', 'text-domain')
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
           onClick: addSlide,
           isPrimary: true,
           disabled: slides.length == 4,
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Add Slide", "text-domain")
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add Slide', 'text-domain')
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.Swiper, {
         modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Autoplay],
@@ -11567,8 +11567,8 @@ function Edit({
         children: slides.map((slide, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(swiper_react__WEBPACK_IMPORTED_MODULE_4__.SwiperSlide, {
           className: " h-[512px] relative",
           children: [!slide.imageUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
-            onSelect: media => updateSlide(index, "imageUrl", media.url),
-            allowedTypes: ["image"],
+            onSelect: media => updateSlide(index, 'imageUrl', media.url),
+            allowedTypes: ['image'],
             value: slide.imageUrl,
             render: ({
               open
@@ -11578,12 +11578,12 @@ function Edit({
                 onClick: open,
                 className: "button button-large",
                 isPrimary: true,
-                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Aggiungi immagine", "text-domain")
+                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Aggiungi immagine', 'text-domain')
               })
             })
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
-            onSelect: media => updateSlide(index, "imageUrl", media.url),
-            allowedTypes: ["image"],
+            onSelect: media => updateSlide(index, 'imageUrl', media.url),
+            allowedTypes: ['image'],
             value: slide.imageUrl,
             render: ({
               open
@@ -11591,8 +11591,8 @@ function Edit({
               onClick: open,
               className: "w-full h-[512px] p-0 m-0",
               style: {
-                cursor: "pointer",
-                display: "inline-block"
+                cursor: 'pointer',
+                display: 'inline-block'
               },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
                 src: slide.imageUrl,
@@ -11609,8 +11609,8 @@ function Edit({
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
               tagName: "p",
               value: slide.category,
-              onChange: value => updateSlide(index, "category", value),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Category", "text-domain"),
+              onChange: value => updateSlide(index, 'category', value),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Category', 'text-domain'),
               className: "text-sm mb-1 ",
               style: {
                 color: categoryColor
@@ -11618,8 +11618,8 @@ function Edit({
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
               tagName: "h3",
               value: slide.title,
-              onChange: value => updateSlide(index, "title", value),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Title", "text-domain"),
+              onChange: value => updateSlide(index, 'title', value),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Title', 'text-domain'),
               className: "text-2xl font-bold",
               style: {
                 color: titleColor

@@ -46,6 +46,15 @@ add_action('admin_init', 'tailwind_setup');
 
 
 
+function swiper_setup()
+{
+	wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
+	wp_enqueue_script('swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', [], null, true);
+}
+add_action('wp_enqueue_scripts', 'swiper_setup');
+
+
+
 
 // Regiistro i pattern category
 function my_custom_block_pattern_category()
@@ -120,6 +129,7 @@ function myblocks_block_init()
 {
 	register_block_type(__DIR__ . '/build/service-quality');
 	register_block_type(__DIR__ . '/build/card-carusel');
+	register_block_type(__DIR__ . '/build/client-reviews');
 }
 add_action('init', 'myblocks_block_init');
 

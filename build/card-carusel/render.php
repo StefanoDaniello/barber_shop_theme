@@ -1,9 +1,5 @@
 <?php
 
-// Carica Swiper CSS e JS da CDN
-wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
-wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', [], null, true);
-
 $slides = $attributes['slides'] ?? [];
 $overlay = esc_attr($attributes['overlayColor'] ?? '#000000');
 $titleColor = esc_attr($attributes['titleColor'] ?? '#ffffff'); // Aggiungi questa riga
@@ -38,34 +34,3 @@ $categoryColor = esc_attr($attributes['categoryColor'] ?? '#969696'); // Aggiung
         </div>
     </div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        if (typeof Swiper !== "undefined") {
-            new Swiper('.wp-block-myblocks-card-carusel .swiper', {
-                loop: false,
-                centeredSlides: false,
-                spaceBetween: 0,
-                allowTouchMove: true,
-                slidesPerView: 4,
-
-                breakpoints: {
-                    1440: {
-                        slidesPerView: 4,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                    },
-                    480: {
-                        slidesPerView: 1,
-                    },
-                },
-            });
-        } else {
-            console.warn("Swiper non è stato caricato.");
-        }
-    });
-</script>
